@@ -1,9 +1,26 @@
-<template>Hello Vue</template>
+<template>
+  Hello Vue
+
+  <AppButton @update="getUpdade">
+    Save
+
+    <template #icon>Icon </template>
+  </AppButton>
+</template>
 
 <script>
+import AppButton from "./components/AppButton.vue";
 export default {
   name: "App",
-  components: {},
+  components: { AppButton },
+  setup() {
+    const getUpdade = (data) => {
+      console.log("getUpdade", data);
+    };
+    return {
+      getUpdade,
+    };
+  },
 };
 </script>
 
